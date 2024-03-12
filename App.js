@@ -77,7 +77,7 @@ export default function App() {
       });
 
       const response = await axios.post(
-        'https://api.plant.id/v2/identify',
+        'https://api.plant.id/v3/identify',
         formData,
         {
           headers: {
@@ -163,7 +163,7 @@ export default function App() {
                 {/*es una expresión ternaria que verifica si la propiedad confirmed del objeto item es verdadera o falsa. Si confirmed es verdadero, se renderiza la cadena "Confirmed", de lo contrario, se renderiza la cadena "Possible"*/}
                   {item.confirmed ? 'Confirmed' : 'Possible'} 
                   match: {item.plant_name} 
-                  (Probability: {item.probability.toFixed(2)})
+                  (Probability: {item.probability.toFixed(1)})
                 </Text>
                 {/* Aquí puedes agregar más detalles sobre la planta si están disponibles en item.plant_details */}
               </View>
